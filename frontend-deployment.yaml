@@ -21,6 +21,6 @@ spec:
         - containerPort: 80
         env:
           - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: "backend/application-credential.json"
+            value: "application-credential.json"
       imagePullSecrets:
         - name: gcr-json-key

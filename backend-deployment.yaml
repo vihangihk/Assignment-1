@@ -41,6 +41,6 @@ spec:
                 name: db-credentials
                 key: DB_PASSWORD
           - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: "backend/application-credentials.json"
+            value: "application-credentials.json"
       imagePullSecrets:
         - name: gcr-json-key
