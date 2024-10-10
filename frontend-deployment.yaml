@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: gcr.io/ica-1-437401/frontend-app:latest
+        ports:
+        - containerPort: 80
+        env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: "backend/application-credential.json"
+      imagePullSecrets:
+        - name: gcr-json-key
